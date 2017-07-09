@@ -1,0 +1,19 @@
+from mysql.connector import connect
+
+def connect_to_db(): # cnx, cursor
+    cnx = connect(
+        user='root',
+        password='coderslab',
+        database='Communicator_db'
+    )
+
+
+    cursor = cnx.cursor()
+
+    return cnx, cursor
+
+def close_connection(cnx, cursor):
+    cursor.close()
+    cnx.close()
+
+
