@@ -44,11 +44,20 @@ def manage_users():
     # u.email = 'janusz@gmial.com'
     # u.set_password('passat_b5', '1999')
     # u.save_to_db(cursor)
+    #
+    # u = User .load_user_by_id(cursor, 1)
+    # print(u.id)
+    # print(u.email)
+    # print(u.username)
 
-    u = User .load_user_by_id(cursor, 1)
-    print(u.id)
-    print(u.email)
-    print(u.username)
+    users = User.load_all_users(cursor)
+    print('{} users:'.format(len(users)))
+    print('-----')
+    for user in users:
+        print(user.id)
+        print(user.email)
+        print(user.username)
+        print('-----')
 
 
 
