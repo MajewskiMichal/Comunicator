@@ -36,17 +36,23 @@ def set_options():
 def manage_users():
     options = set_options()
 
-    #kodzik tutaj
+    # #kodzik tutaj
     cnx, cursor = connect_to_db()
+    #
+    # u = User()
+    # u.username = "janusz"
+    # u.email = 'janusz@gmial.com'
+    # u.set_password('passat_b5', '1999')
+    # u.save_to_db(cursor)
 
-    u = User()
-    u.username = "janusz"
-    u.email = 'janusz@gmial.com'
-    u.set_password('passat_b5', '1999')
-    u.save_to_db(cursor)
+    u = User .load_user_by_id(cursor, 1)
+    print(u.id)
+    print(u.email)
+    print(u.username)
+
+
 
     close_connection(cnx,cursor)
-
 
 if __name__ == "__main__":
     manage_users()
